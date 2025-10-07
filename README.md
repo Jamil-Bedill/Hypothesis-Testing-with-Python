@@ -131,10 +131,11 @@ The F-test statistic is 1971.46 and the p-value is 8.81∗10−256 (i.e., very s
 ## Step 7: Post Hoc Analysis (Tukey’s HSD)
 We have significant results from the one-way ANOVA test. WE  apply ANOVA post hoc tests, such as Tukey’s HSD post hoc test. Let us run Tukey’s HSD post hoc test to determine if there is a significant difference between each pair of categories for TV.
 ```
-tukey_oneway = pairwise_tukeyhsd(endog =data['Sales'], groups = data['TV'], alpha = 0.5)
+tukey_oneway = pairwise_tukeyhsd(endog =data['Sales'], groups = data['TV'], alpha = 0.05)
 tukey_oneway.summary()
 ```
-<img width="424" height="148" alt="image" src="https://github.com/user-attachments/assets/8b0efae3-5db0-448e-961b-3cdbabf5fe80" />
+<img width="412" height="136" alt="image" src="https://github.com/user-attachments/assets/326ba43f-9587-49a7-9589-335d84548db9" />
+
 
 Based on the Tukey HSD test, we can reject the null hypothesis that there is no statistically significant difference in sales between the three groups. A post hoc test was performed to identify which specific TV groups differ from each other and how many of these differences exist. Unlike the one-way ANOVA, which only indicates that at least one group is different, the post hoc test provides detailed pairwise comparisons. Using the Tukey HSD method also helps control for the increased risk of Type I errors that can occur when performing multiple comparisons.
 The results showed that sales differ significantly between all pairs of TV groups.
